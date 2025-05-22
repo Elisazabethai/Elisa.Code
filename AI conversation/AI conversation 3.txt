@@ -1,0 +1,62 @@
+Tool: ChatGPT
+Date: 2025-04-20
+----------------------------------
+
+Me: I want to visualise the temperature for the next three days using matplotlib. How do I do that?
+
+AI: Sure! First extract the daily temperature values from the API data:
+
+```python
+days = data["weather"]
+dates = [day["date"] for day in days]
+max_temps = [int(day["maxtempC"]) for day in days]
+min_temps = [int(day["mintempC"]) for day in days]
+```
+
+Now you can plot:
+
+```python
+import matplotlib.pyplot as plt
+
+plt.figure(figsize=(8, 5))
+plt.plot(dates, max_temps, label='Max Temp (°C)', marker='o')
+plt.plot(dates, min_temps, label='Min Temp (°C)', marker='x')
+plt.title('3-Day Temperature Forecast')
+plt.xlabel('Date')
+plt.ylabel('Temperature (°C)')
+plt.legend()
+plt.grid(True)
+plt.show()
+```
+
+Me: That worked! Can I use seaborn for better visuals?
+
+AI: Absolutely. Seaborn makes charts more polished:
+
+```python
+import seaborn as sns
+sns.set(style="whitegrid")
+
+plt.figure(figsize=(8, 5))
+sns.lineplot(x=dates, y=max_temps, label='Max Temp')
+sns.lineplot(x=dates, y=min_temps, label='Min Temp')
+plt.title('3-Day Temperature Forecast')
+plt.xlabel('Date')
+plt.ylabel('°C')
+plt.legend()
+plt.show()
+```
+
+Me: Should I display icons or symbols for conditions like cloudy or sunny?
+
+AI: Yes, you can enhance UX with emojis or small icons. Example:
+
+```python
+conditions = [day["hourly"][4]["weatherDesc"][0]["value"] for day in days]
+for d, c in zip(dates, conditions):
+    print(f"{d}: {c}")
+```
+
+Me: Thanks! I’ll test this.
+
+AI: Good luck!
