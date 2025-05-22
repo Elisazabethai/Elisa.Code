@@ -1,0 +1,16 @@
+----------------------------------
+Tool: ChatGPT
+Date: 2025-05-21
+----------------------------------
+
+Me: I'm writing a reflection on how AI helped me in my Python weather app project. What should I include?
+AI: Consider including the tools you used, types of support you received (code suggestions, debugging, design help), and how it improved your workflow or learning.
+
+Me: I used ChatGPT for code troubleshooting and to design the structure. Should I mention the limitations too?
+AI: Absolutely. Reflecting on both benefits and limitations shows critical thinking. Mention if the AI misunderstood prompts or gave solutions you had to adapt.
+
+Me: How about my independence? I don't want it to sound like I relied on AI too much.
+AI: That’s a good point. Emphasize how AI served as a guide while you retained control and made final decisions. Mention your learning curve too.
+
+Me: Thanks. How do I end the reflection?
+AI: Conclude with a summary of what you gained (e.g. improved coding skills, confidence in Python), and possibly your thoughts on using AI in future projects.
