@@ -1,0 +1,53 @@
+Tool: ChatGPT
+Date: 2025-05-19
+----------------------------------
+
+Me: I’m adding more error handling to my weather app. What kind of exceptions should I catch when using requests?
+
+AI: Good question. You should catch:
+
+- requests.exceptions.Timeout
+- requests.exceptions.ConnectionError
+- requests.exceptions.HTTPError
+- requests.exceptions.RequestException (general catch-all)
+
+You can structure your code like this:
+
+```python
+try:
+    response = requests.get(url, timeout=10)
+    response.raise_for_status()
+    data = response.json()
+except requests.exceptions.Timeout:
+    print("Request timed out")
+except requests.exceptions.HTTPError as http_err:
+    print("HTTP error:", http_err)
+except requests.exceptions.ConnectionError:
+    print("Connection failed")
+except requests.exceptions.RequestException as err:
+    print("An error occurred:", err)
+```
+
+Me: Nice. Can I display a fallback message to the user in the notebook?
+
+AI: Yes, you can return a friendly message instead of raw error details:
+
+```python
+return {"error": "Sorry, we're unable to fetch weather data right now."}
+```
+
+Me: Also, is it okay to hardcode location names?
+
+AI: It’s better to validate user input. You can check if the string is empty or contains only spaces:
+
+```python
+if not location.strip():
+    return {"error": "Invalid location. Please enter a valid city or region."}
+```
+
+Me: Should I allow users to enter country names?
+
+AI: You can, but wttr.in works best with city or region names. Add a helper that recommends valid examples.
+
+Me: Perfect. Thanks!
+
