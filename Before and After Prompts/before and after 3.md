@@ -60,7 +60,7 @@ Please improve this menu system to:
 import pyinputplus as pyip
 
 def run_weather_menu(get_weather_func, ask_question_func):
-    print("Welcome to WeatherWise 🌤️")
+    print("Welcome to WeatherWise ")
     while True:
         print("\nWhat would you like to do?")
         print("1. View current weather")
@@ -93,7 +93,7 @@ def run_weather_menu(get_weather_func, ask_question_func):
             print(ask_question_func(question, get_weather_func))
 
         elif choice == "4":
-            print("Goodbye! 🌈")
+            print("Goodbye! ")
             break
 ```
 
